@@ -1,20 +1,20 @@
-var rdt = function() {
+﻿<!DOCTYPE html>
 
-    var copyUrl = function() {
-        return window.location.href;
-    }
-
-    var removeBody = function() {
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <a href="javascript:(function() {
         var bodyChildren = document.body.children;
         var len = bodyChildren.length;
         for (var i = 1; i <= len; i++) {
             var child = bodyChildren[len - i];
             child.parentNode.removeChild(child);
         }
-    };
 
-    var addIFrame = function() {
-        var url = copyUrl();
+        var url = window.location.href;
         var frame = document.createElement('iframe');
         frame.src = url;
         frame.style.width = '320px';
@@ -28,15 +28,6 @@ var rdt = function() {
 
         document.body.style.backgroundColor = '#333';
         document.body.appendChild(div);
-    };
-
-    var go = function() {
-        removeBody();
-        addIFrame();
-    };
-
-    return {
-        go: go
-    };
-
-}();
+})();">Responsive Testing</a>
+</body>
+</html>
